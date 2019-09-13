@@ -7,6 +7,7 @@
 1/ Syntax
 
 ``` CSS
+/* CSS */
 #a .a-1 {
   background: yellow;
 }
@@ -20,6 +21,7 @@
 ```
 
 ```SCSS
+/* SCSS */
 #a {
 	.a-1{
 		background:yellow;
@@ -35,6 +37,7 @@
 
 2/  a:hover , a:active , a:visited , a:first-letter , a:last-child
 ```CSS
+/* CSS */
 
 .hello .dropdown {
   display: none;
@@ -46,6 +49,7 @@
 ```
 
 ```SCSS
+/* SCSS */
 .hello {
 	.dropdown{
 		display: none;
@@ -60,6 +64,7 @@
 
 3/ Namespace
 ```CSS
+/* CSS */
 .funky {
   font-family: fantasy;
   font-size: 30em;
@@ -70,6 +75,7 @@
 ```
 
 ```SCSS
+/* SCSS */
 .funky {
   font: {
     family: fantasy;
@@ -82,3 +88,9 @@
   }
 }
 ```
+
+4/ comments
+
+CSS: ``` /* */ ```
+
+SCSS:  ``` /* */ and //```
