@@ -457,10 +457,110 @@ $b:box-shadow;
 
 ```
 
+12.1/ @extends
+
+
+```SCSS
+/* SCSS */
+.error {
+  border: 1px #f00;
+  // Other  rules  that  use  .error  will  work  for  .seriousError  as  well.
+  &.intrusion {
+	  background-image: url("/image/hacked.png");
+	}
+}
+.seriousError {
+  @extend .error;
+}
+```
+
+```SCSS
+/* SCSS */
+.error, .seriousError {
+  border: 1px #f00;
+}
+.error.intrusion, .intrusion.seriousError {
+  background-image: url("/image/hacked.png");
+}
+```
+12.2/ Multiple @extends
+
+```SCSS
+/* SCSS */
+.error {
+  border: 1px #f00;
+  background-color: #fdd;
+}
+.attention {
+  font-size: 3em;
+  background-color: #ff0;
+}
+.seriousError {
+  // ===>
+  @extend .error;
+  @extend .attention;
+  border-width: 3px;
+}
+```
+
+```CSS
+/* CSS */
+.error, .seriousError {
+  border: 1px #f00;
+  background-color: #fdd;
+}
+
+.attention, .seriousError {
+  font-size: 3em;
+  background-color: #ff0;
+}
+
+.seriousError {
+  border-width: 3px;
+}
+
+```
+12.2/ Chaining @extends
+
+```SCSS
+/* SCSS */
+.error {
+  border: 1px #f00;
+  background-color: #fdd;
+}
+.seriousError {
+  @extend .error;
+  border-width: 3px;
+}
+
+.criticalError {
+  @extend .seriousError;
+  position: fixed;
+  top: 10%;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+}
+```
 
 
 
 ```SCSS
 /* SCSS */
+.error, .seriousError, .criticalError {
+  border: 1px #f00;
+  background-color: #fdd;
+}
 
+.seriousError, .criticalError {
+  border-width: 3px;
+}
+
+.criticalError {
+  position: fixed;
+  top: 10%;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+}
 ```
