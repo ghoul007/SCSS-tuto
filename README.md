@@ -1,10 +1,10 @@
 ## SCSS
 
- 0/ To Compile files inside input folder:
+ 0/ Compile files (inside input folder):
 
  ```sass --watch input:output```
 
-1/ Syntax
+1/ Nested Syntax
 
 ``` CSS
 /* CSS */
@@ -35,7 +35,7 @@
 }
 ```
 
-2/  a:hover , a:active , a:visited , a:first-letter , a:last-child
+2/ CSS Pseudo classses: a:hover , a:active , a:visited , a:first-letter , a:last-child
 ```CSS
 /* CSS */
 
@@ -89,7 +89,7 @@
 }
 ```
 
-4/ comments
+4/ Comments
 
 CSS: ``` /* */ ```
 
@@ -105,7 +105,7 @@ $width: 10px;
 }
 ```
 
-5/ standard standard operations for numbers (plus + , minus - , multiply * , divide / and modulo % )
+5/ Standard standard operations for numbers (plus + , minus - , multiply * , divide / and modulo % )
 
 ```SCSS
 /* SCSS */
@@ -114,7 +114,7 @@ p {
 }
 ```
 
-6/Interpolation: #{}
+6/ Interpolation: #{}
 
 ```CSS
 p.foo {
@@ -239,7 +239,7 @@ $i:6;
 ```
 
 
-9/ The @each rule
+9/ The @each directive
 
 
 ```SCSS
@@ -314,7 +314,8 @@ $gutter-width: 10px;
 
 11/ Mixin Directives
 
-11.1/ @mixin
+11.1/ Basic
+
 ```SCSS
 /* SCSS */
 @mixin large-text {
@@ -328,7 +329,7 @@ $gutter-width: 10px;
 
 ```
 
-11.2/ Mixins can be re-used throughout the stylesheet
+11.2/ Re-used throughout the stylesheet
 
 ```SCSS
 /* SCSS */
@@ -356,7 +357,7 @@ $gutter-width: 10px;
 
 
 
-11.3/Mixins are included in the document
+11.3/ Included in the document
 
 ```SCSS
 /* SCSS */
@@ -407,7 +408,7 @@ a {
 
 
 
-11.4/ Mixins with arguments
+11.4/ With arguments
 
 ```SCSS
 /* SCSS */
@@ -456,8 +457,9 @@ $b:box-shadow;
 }
 
 ```
+12/ @extends
 
-12.1/ @extends
+12.1/ Basic
 
 
 ```SCSS
@@ -545,8 +547,8 @@ $b:box-shadow;
 
 
 
-```SCSS
-/* SCSS */
+```CSS
+/* CSS */
 .error, .seriousError, .criticalError {
   border: 1px #f00;
   background-color: #fdd;
