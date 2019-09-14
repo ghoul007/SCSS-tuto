@@ -133,6 +133,149 @@ p.#{$name} {
 }
 ```
 
+7/ The @if directive
+
+
+```SCSS
+/* SCSS */
+p {
+  @if 1 + 1 == 2 { border: 1px solid;  }
+  @if true {background-image:url('')}
+  @if 5 < 3      { border: 2px dotted; }
+  @if null       { border: 3px double; }
+}
+$type: monster;
+p {
+  @if $type == ocean {
+    color: blue;
+  } @else if $type == matador {
+    color: red;
+  } @else if $type == monster {
+    color: green;
+  } @else {
+    color: black;
+  }
+}
+```
+
+
+```CSS
+/* CSS */
+p {
+  border: 1px solid;
+  background-image: url("");
+}
+
+p {
+  color: green;
+}
+```
+
+
+8/ The @for directive
+
+```SCSS
+/* SCSS */
+@for $i from 1 through 3 { //1,2,3
+  .item-#{$i} { width: 2em * $i; }
+}
+```
+
+```CSS
+/* CSS */
+.item-1 {
+  width: 2em;
+}
+
+.item-2 {
+  width: 4em;
+}
+
+.item-3 {
+  width: 6em;
+}
+```
+
+
+
+```SCSS
+/* SCSS */
+$i:6;
+@for $i from 1 through $i{
+  .col-#{$i}{
+    width:$i/6*100%
+  }
+}
+
+```
+
+
+```CSS
+/* CSS */
+.col-1 {
+  width: 16.6666666667%;
+}
+
+.col-2 {
+  width: 33.3333333333%;
+}
+
+.col-3 {
+  width: 50%;
+}
+
+.col-4 {
+  width: 66.6666666667%;
+}
+
+.col-5 {
+  width: 83.3333333333%;
+}
+
+.col-6 {
+  width: 100%;
+}
+
+```
+
+
+9/ The @each rule
+
+
+```SCSS
+/* SCSS */
+@each $animal in farouk, hamza, malek, hajer, sana {
+  .#{$animal}-icon {
+    background-image: url('/images/#{$animal}.png');
+  }
+}
+
+```
+
+
+```CSS
+/* CSS */
+.farouk-icon {
+  background-image: url("/images/farouk.png");
+}
+
+.hamza-icon {
+  background-image: url("/images/hamza.png");
+}
+
+.malek-icon {
+  background-image: url("/images/malek.png");
+}
+
+.hajer-icon {
+  background-image: url("/images/hajer.png");
+}
+
+.sana-icon {
+  background-image: url("/images/sana.png");
+}
+```
+
 
 
 ```SCSS
