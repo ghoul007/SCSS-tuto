@@ -277,6 +277,48 @@ $i:6;
 ```
 
 
+10/ function
+
+
+
+```SCSS
+/* SCSS */
+$grid-width: 40px;
+$gutter-width: 10px;
+
+@function test($a){
+	@return $a+10
+}
+
+@function grid-width($n) {
+	$hello:1px ;
+	@for $i from 1 through $n{
+		$hello:$hello+$i
+	}
+	@if $hello > 10 {
+		$hello:15px
+	}
+    @return $hello + test(2)
+}
+
+#sidebar { width: grid-width(5); }
+```
+
+
+```CSS
+/* CSS */
+#sidebar {
+  width: 27px;
+}
+```
+
+
+
+```SCSS
+/* SCSS */
+
+```
+
 
 ```SCSS
 /* SCSS */
