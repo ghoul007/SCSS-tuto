@@ -94,3 +94,48 @@
 CSS: ``` /* */ ```
 
 SCSS:  ``` /* */ and //```
+
+5/CSS properties
+
+```SCSS
+/* SCSS */
+$width: 10px;
+#main {
+  width: $width;
+}
+```
+
+5/ standard standard operations for numbers (plus + , minus - , multiply * , divide / and modulo % )
+
+```SCSS
+/* SCSS */
+p {
+  width: (1em + 2em) * 3;
+}
+```
+
+6/Interpolation: #{}
+
+```CSS
+p.foo {
+  border-color: blue;
+  content: "hello world foo";
+}
+```
+
+```SCSS
+/* SCSS */
+$name: foo;
+$attr: border;
+p.#{$name} {
+  #{$attr}-color: blue;
+  content: "hello world #{$name}"
+}
+```
+
+
+
+```SCSS
+/* SCSS */
+
+```
