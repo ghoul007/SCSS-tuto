@@ -312,12 +312,152 @@ $gutter-width: 10px;
 }
 ```
 
+11/ Mixin Directives
+
+11.1/ @mixin
+```SCSS
+/* SCSS */
+@mixin large-text {
+  font: {
+    family: Arial;
+    size: 20px;
+    weight: bold;
+  }
+  color: #ff0000;
+}
+
+```
+
+11.2/ Mixins can be re-used throughout the stylesheet
+
+```SCSS
+/* SCSS */
+.page-title {
+  @include large-text;
+  padding: 4px;
+  margin-top: 10px;
+}
+```
+
+
+```CSS
+/* CSS */
+.page-title {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff0000;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+
+```
+
+
+
+11.3/Mixins are included in the document
+
+```SCSS
+/* SCSS */
+@mixin silly-links {
+  a {
+    color: blue;
+    background-color: red;
+  }
+}
+
+@include silly-links;
+```
+
+
+```CSS
+/* CSS */
+a {
+  color: blue;
+  background-color: red;
+}
+
+```
+
 
 
 ```SCSS
 /* SCSS */
 
+@mixin compound {
+  @include highlighted-background;
+  @include header-text;
+}
+
+@mixin highlighted-background { background-color: #fc0; }
+@mixin header-text { font-size: 20px; }
+.test{
+  @include compound
+}
+
 ```
+```CSS
+/* CSS */
+.test {
+  background-color: #fc0;
+  font-size: 20px;
+}
+```
+
+
+
+11.4/ Mixins with arguments
+
+```SCSS
+/* SCSS */
+@mixin generic-border($color, $width) {
+  border: {
+    color: $color;
+    width: $width;
+    style: dashed;
+  }
+}
+p { @include generic-border(blue, 10px); }
+
+```
+
+```CSS
+/* CSS */
+p {
+  border-color: blue;
+  border-width: 10px;
+  border-style: dashed;
+}
+```
+
+
+```SCSS
+/* SCSS */
+$b:box-shadow;
+@mixin box-shadow($shadows...) {
+  -moz-#{$b}: $shadows;
+  -webkit-#{$b}: $shadows;
+  #{$b}: $shadows;
+}
+
+.shadows {
+  @include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);
+}
+
+```
+
+```CSS
+/* CSS */
+.shadows {
+  -moz-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+  -webkit-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+  box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+}
+
+```
+
+
 
 
 ```SCSS
